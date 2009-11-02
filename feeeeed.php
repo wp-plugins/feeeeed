@@ -4,7 +4,7 @@ Plugin Name: feeeeed
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Author: AI.Takeuchi
-Version: 0.2
+Version: 0.3
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -189,16 +189,29 @@ class WpFeeeeed {
 // ritch text editor
 function ShowTinyMCE() {
     // conditions here
-    wp_enqueue_script( 'common' );
-    wp_enqueue_script( 'jquery-color' );
-    //wp_enqueue_script('post');
-    wp_print_scripts('editor');
-    if (function_exists('add_thickbox')) add_thickbox();
-    wp_print_scripts('media-upload');
-    if (function_exists('wp_tiny_mce')) wp_tiny_mce();
+    wp_enqueue_script('common');
+    wp_enqueue_script('jquery-color');
+    //wp_print_scripts('editor');
+    //if (function_exists('add_thickbox')) add_thickbox();
+    //wp_print_scripts('media-upload');
+    //if (function_exists('wp_tiny_mce')) wp_tiny_mce();
     wp_admin_css();
     wp_enqueue_script('utils');
-    do_action("admin_print_styles-post-php");
-    do_action('admin_print_styles');
+    //do_action("admin_print_styles-post-php");
+    //do_action('admin_print_styles');
+
+    fix_ShowTinyMCE();
 }
+function fix_ShowTinyMCE(){
+    wp_admin_css('thickbox');
+    wp_enqueue_script('post');
+    wp_enqueue_script('editor');
+    wp_enqueue_script('editor-functions');
+    add_thickbox();
+    wp_enqueue_script('media-upload');
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-ui-core');
+    wp_enqueue_script('jquery-ui-tabs');
+    wp_enqueue_script('tiny_mce');
+ }
 ?>

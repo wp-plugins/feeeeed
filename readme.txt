@@ -4,7 +4,7 @@ Donate link: http://takeai.silverpigeon.jp/
 Tags: rss, feed, wordpress
 Requires at least: 2.6
 Tested up to: 2.7
-Stable tag: 0.2
+Stable tag: 0.3
 
 Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Rss-feed not support browser (Chrome and older than IE6) is reading 
