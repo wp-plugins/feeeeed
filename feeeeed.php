@@ -4,7 +4,7 @@ Plugin Name: feeeeed
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Author: AI.Takeuchi
-Version: 0.1
+Version: 0.2
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -66,6 +66,9 @@ class WpFeeeeedModel {
     var $text_jump_url = '';
     var $text_message = '';
     var $text_date_format = 'D, d M Y H:i:s';
+    var $auto_move = '';
+    var $auto_move_sec = 10; 
+    var $auto_move_url = '';
     
     // constructor
     function WpFeeeeedModel() {

@@ -68,6 +68,10 @@ function save(&$obj) {
     $model->text_message = $text_message;
     $model->text_date_format = $text_date_format;
 
+    $model->auto_move = $f5d_auto_move;
+    $model->auto_move_sec = $f5d_auto_move_sec;
+    $model->auto_move_url = $f5d_auto_move_url;
+
     $obj->updateWpOption($model); // Save database-model
 }
 
@@ -115,6 +119,10 @@ function echoMenuList(&$obj, $msg = '') {
       */
      the_editor(stripslashes($model->text_message), 'text_message');
      ?>
+       
+      <input type="checkbox" name="f5d_auto_move" value="checked" <?php echo $model->auto_move; ?> /><?php _e('After seconds to move URL','feeeeed');?>
+      <br /><?php _e('Wait time','feeeee');?> <input type="text" name="f5d_auto_move_sec" value="<?php echo $model->auto_move_sec; ?>" /> <?php _e('seconds','feeeeed');?>
+      <br /><?php _e('URL','feeeeed');?> <input type="text" name="f5d_auto_move_url" value="<?php echo $model->auto_move_url; ?>" size="60" />
     </fieldset>
 
     <fieldset>
