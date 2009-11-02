@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: feeeeed\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-26 12:48+0900\n"
+"POT-Creation-Date: 2009-11-02 11:23+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: AI Takeuchi <takeai@silverpigeon.jp>\n"
 "Language-Team: AI.Takeuchi <takeai@silverpigeon.jp>\n"
@@ -12,58 +12,87 @@ msgstr ""
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: G:\\public_html\\wp_plugins\\feeeeed\n"
-"X-Poedit-SearchPath-0: G:\\public_html\\wp_plugins\\feeeeed\n"
+"X-Poedit-Basepath: G:\\public_html\\wp_plugins\n"
+"X-Poedit-SearchPath-0: feeeeed-dev\n"
 
-#: G:\public_html\wp_plugins\feeeeed/feeeeed.php:71
+#: feeeeed-dev/trunk/feeeeed.php:77
+#: feeeeed-dev/tags/0.1/feeeeed.php:74
 msgid "What is your browser can not read the feed."
 msgstr "あなたのブラウザーは RSS-Feed に対応していません."
 
-#: G:\public_html\wp_plugins\feeeeed/feeeeed.php:72
+#: feeeeed-dev/trunk/feeeeed.php:78
+#: feeeeed-dev/tags/0.1/feeeeed.php:75
 msgid "Y.m.d"
 msgstr "D, d M Y H:i:s"
 
-#: G:\public_html\wp_plugins\feeeeed/module/execute_admin.php:25
+#: feeeeed-dev/trunk/module/execute_admin.php:25
+#: feeeeed-dev/tags/0.1/module/execute_admin.php:25
 msgid "Rss-feed not support browser (Chrome and older than IE6) is reading rss-feed then ..... :"
 msgstr "RSS-Feed 未対応のブラウザー (Chrome と IE6 以前) が RSS-Feed を読み込もうとしたときに ..... :"
 
-#: G:\public_html\wp_plugins\feeeeed/module/execute_admin.php:88
+#: feeeeed-dev/trunk/module/execute_admin.php:92
+#: feeeeed-dev/tags/0.1/module/execute_admin.php:88
 msgid "Put feed formatted Html"
 msgstr "RSS-Feed を Html 形式で出力"
 
-#: G:\public_html\wp_plugins\feeeeed/module/execute_admin.php:89
+#: feeeeed-dev/trunk/module/execute_admin.php:93
+#: feeeeed-dev/tags/0.1/module/execute_admin.php:89
 msgid "Date format"
 msgstr "日付の形式"
 
-#: G:\public_html\wp_plugins\feeeeed/module/execute_admin.php:90
+#: feeeeed-dev/trunk/module/execute_admin.php:94
+#: feeeeed-dev/tags/0.1/module/execute_admin.php:90
 msgid "ex: \"D, d M Y H:i:s\", ex: \"Y.m.d\""
 msgstr "例: \"D, d M Y H:i:s\", 例: \"Y年m月d日\""
 
-#: G:\public_html\wp_plugins\feeeeed/module/execute_admin.php:94
+#: feeeeed-dev/trunk/module/execute_admin.php:98
+#: feeeeed-dev/tags/0.1/module/execute_admin.php:94
 msgid "Jump Homepage"
 msgstr "ホームページを移動"
 
-#: G:\public_html\wp_plugins\feeeeed/module/execute_admin.php:95
+#: feeeeed-dev/trunk/module/execute_admin.php:99
+#: feeeeed-dev/tags/0.1/module/execute_admin.php:95
 msgid "Jump to"
 msgstr "移動先"
 
-#: G:\public_html\wp_plugins\feeeeed/module/execute_admin.php:99
+#: feeeeed-dev/trunk/module/execute_admin.php:103
+#: feeeeed-dev/tags/0.1/module/execute_admin.php:99
 msgid "Put message"
 msgstr "メッセージを出力"
 
-#: G:\public_html\wp_plugins\feeeeed/module/execute_admin.php:121
+#: feeeeed-dev/trunk/module/execute_admin.php:123
+msgid "After seconds to move URL"
+msgstr "秒経過後 URL 移動する"
+
+#: feeeeed-dev/trunk/module/execute_admin.php:124
+msgid "Wait time"
+msgstr "待ち時間"
+
+#: feeeeed-dev/trunk/module/execute_admin.php:124
+msgid "seconds"
+msgstr "秒"
+
+#: feeeeed-dev/trunk/module/execute_admin.php:125
+msgid "URL"
+msgstr "移動先 URL"
+
+#: feeeeed-dev/trunk/module/execute_admin.php:129
+#: feeeeed-dev/tags/0.1/module/execute_admin.php:121
 msgid "Operation"
 msgstr "操作"
 
-#: G:\public_html\wp_plugins\feeeeed/module/js.php:22
+#: feeeeed-dev/trunk/module/js.php:22
+#: feeeeed-dev/tags/0.1/module/js.php:22
 msgid "Input new menu name."
 msgstr "Input new menu name."
 
-#: G:\public_html\wp_plugins\feeeeed/module/feed2html.php:18
+#: feeeeed-dev/trunk/module/feed2html.php:18
+#: feeeeed-dev/tags/0.1/module/feed2html.php:18
 msgid "Author:"
 msgstr "投稿者: "
 
-#: G:\public_html\wp_plugins\feeeeed/module/feed2html.php:19
+#: feeeeed-dev/trunk/module/feed2html.php:19
+#: feeeeed-dev/tags/0.1/module/feed2html.php:19
 msgid "Date: "
 msgstr "日付: "
 
