@@ -119,11 +119,24 @@ function echoMenuList(&$obj, $msg = '') {
       */
      //the_editor(stripslashes($model->text_message), 'text_message');
 
+        /*
      echo '<div id="postrichdiv" class="postarea">';
      if (function_exists('wp_tiny_mce')) wp_tiny_mce();
      the_editor(stripslashes($model->text_message), 'text_message');
      echo '</div>';
-
+          */
+        /*
+    if ( current_user_can('edit_posts') ) {
+        echo '<div id="postrichdiv" class="postarea">';
+        the_editor('');
+        echo '</div>';
+    }
+          */
+        
+        /*the_editor($content_to_load);*/
+     the_editor(stripslashes($model->text_message), 'text_message');
+    
+    
      ?>
        
       <input type="checkbox" name="f5d_auto_move" value="checked" <?php echo $model->auto_move; ?> /><?php _e('After seconds to move URL','feeeeed');?>

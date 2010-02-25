@@ -4,7 +4,7 @@ Plugin Name: feeeeed
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Author: AI.Takeuchi
-Version: 0.5
+Version: 0.6
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -30,6 +30,18 @@ Author URI: http://takeai.silverpigeon.jp/
 
 load_plugin_textdomain('feeeeed', 'wp-content/plugins/feeeeed/lang', 'feeeeed/lang');
 
+ 
+function myplugin_tinymce() {
+    wp_admin_css('thickbox');
+    wp_print_scripts('jquery-ui-core');
+    wp_print_scripts('jquery-ui-tabs');
+    wp_print_scripts('post');
+    wp_print_scripts('editor');
+    add_thickbox();
+    wp_print_scripts('media-upload');
+    if (function_exists('wp_tiny_mce')) { wp_tiny_mce(); }
+}
+
 if (is_admin()) {
     $wpFeeeeed = & new WpFeeeeed();
     // Registration of management screen header output function.
@@ -37,7 +49,9 @@ if (is_admin()) {
     // Registration of management screen function.
     add_action('admin_menu', array(&$wpFeeeeed, 'addAdminMenu'));
     // ritch text editor
-    add_filter('admin_head','ShowTinyMCE');
+    //add_filter('admin_head','ShowTinyMCE');
+    //add_filter('admin_head','ugc_content');
+    add_filter('admin_head','myplugin_tinymce');
 } else {
     require_once('module/get_browser_info.php');
     $bw = get_browser_info();
@@ -186,6 +200,21 @@ class WpFeeeeed {
         execute_admin($this);
     }
 }
+
+/*
+function ugc_content(){
+    wp_admin_css('thickbox');
+    wp_enqueue_script('post');
+    wp_enqueue_script('editor');
+    wp_enqueue_script('editor-functions');
+    add_thickbox();
+    wp_enqueue_script('media-upload');
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-ui-core');
+    wp_enqueue_script('jquery-ui-tabs');
+    wp_enqueue_script('tiny_mce');
+}
+
 // ritch text editor
 function ShowTinyMCE() {
     // conditions here
@@ -214,4 +243,6 @@ function fix_ShowTinyMCE(){
     wp_enqueue_script('jquery-ui-tabs');
     wp_enqueue_script('tiny_mce');
  }
+  */
+
 ?>
