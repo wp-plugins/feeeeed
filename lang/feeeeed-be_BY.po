@@ -1,0 +1,107 @@
+# Translation of the WordPress plugin feeeeed 0.3 by AI.Takeuchi.
+# Copyright (C) 2010 AI.Takeuchi
+# This file is distributed under the same license as the feeeeed package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: feeeeed 0.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/feeeeed\n"
+"POT-Creation-Date: 2010-02-17 10:56+0000\n"
+"PO-Revision-Date: 2010-03-04 16:47+0300\n"
+"Last-Translator: FatCow <zhr@tut.by>\n"
+"Language-Team: FatCow <zhr@tut.by>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Belarusian\n"
+"X-Poedit-Country: BELARUS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: feeeeed.php:77
+msgid "What is your browser can not read the feed."
+msgstr "Что такое, ваш браузер не может прочитать канал."
+
+#: feeeeed.php:78
+msgid "Y.m.d"
+msgstr "Y.m.d"
+
+#: module/execute_admin.php:25
+msgid "Rss-feed not support browser (Chrome and older than IE6) is reading rss-feed then ..... :"
+msgstr "Rss-ленты не поддерживаются вашим браузером (Chrome и IE старше чем IE6) читает rss-feed чем ..... :"
+
+#: module/execute_admin.php:92
+msgid "Put feed formatted Html"
+msgstr "Вставьте отформат. Html"
+
+#: module/execute_admin.php:93
+msgid "Date format"
+msgstr "Формат даты"
+
+#: module/execute_admin.php:94
+msgid "ex: \"D, d M Y H:i:s\", ex: \"Y.m.d\""
+msgstr "напр.: \"D, d M Y H:i:s\", напр.: \"Y.m.d\""
+
+#: module/execute_admin.php:98
+msgid "Jump Homepage"
+msgstr "Перейти к домашней странице"
+
+#: module/execute_admin.php:99
+msgid "Jump to"
+msgstr "Перейти к"
+
+#: module/execute_admin.php:103
+msgid "Put message"
+msgstr "Вставить сообщение"
+
+#: module/execute_admin.php:129
+msgid "After seconds to move URL"
+msgstr "После секунд перейти к адресу"
+
+#: module/execute_admin.php:130
+msgid "Wait time"
+msgstr "Ждать время"
+
+#: module/execute_admin.php:130
+msgid "seconds"
+msgstr "секунд"
+
+#: module/execute_admin.php:131
+msgid "URL"
+msgstr "УРЛ"
+
+#: module/execute_admin.php:135
+msgid "Operation"
+msgstr "Операция"
+
+#: module/feed2html.php:18
+msgid "Author:"
+msgstr "Автор:"
+
+#: module/feed2html.php:19
+msgid "Date: "
+msgstr "Дата:"
+
+#: module/js.php:22
+msgid "Input new menu name."
+msgstr "Вставить название нового меню."
+
+#. Plugin Name of an extension
+msgid "feeeeed"
+msgstr "feeeeed"
+
+#. #-#-#-#-#  plugin.pot (feeeeed 0.3)  #-#-#-#-#
+#. Plugin URI of an extension
+#. #-#-#-#-#  plugin.pot (feeeeed 0.3)  #-#-#-#-#
+#. Author URI of an extension
+msgid "http://takeai.silverpigeon.jp/"
+msgstr "http://takeai.silverpigeon.jp/"
+
+#. Description of an extension
+msgid "Feeeeed is a plugin that is Measures against browser that is not supports feed."
+msgstr "Feeeeed - плагин, что является мерах по борьбе с браузером, который не поддерживает канал."
+
+#. Author of an extension
+msgid "AI.Takeuchi"
+msgstr ""
+
