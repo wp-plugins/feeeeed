@@ -3,8 +3,8 @@ Contributors: AI.Takeuchi
 Donate link: http://takeai.silverpigeon.jp/
 Tags: rss, feed, wordpress
 Requires at least: 2.6
-Tested up to: 2.7
-Stable tag: 0.8
+Tested up to: 2.9.2
+Stable tag: 0.9.0
 
 Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Rss-feed not support browser (Chrome and older than IE6) is reading 
@@ -24,6 +24,7 @@ rss-feed then output Rss-feed formatted html, move url or output message.
 
 = Translators =
 
+* German (de_DE) - [Rian Kremer](http://vcacursus.tel/)
 * Dutch (nl_NL) - [Rene](http://wpwebshop.com/premium-wordpress-themes/)
 * Belorussian (be_BY) - [Marcis Gasuns](http://pc.de/)
 * Japanese (ja) - [AI.Takeuchi](http://takeai.silverpigeon.jp/)
@@ -40,6 +41,9 @@ If you have created your own language pack, or have an update of an existing one
 
 
 == Changelog ==
+
+= 0.9.0 =
+* Translation for German has been newly created by Rian Kremer.
 
 = 0.8 =
 * Translation for Dutch has been newly created by Rene.
