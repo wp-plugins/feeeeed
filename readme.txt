@@ -4,9 +4,9 @@ Donate link: http://takeai.silverpigeon.jp/
 Tags: rss, feed, wordpress
 Requires at least: 2.6
 Tested up to: 3.1.1
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 
-When rss-feed unsupported browser will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
+When rss-feed unsupported browser(Chrome and older than IE6) will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
 
 Demonstration site is here!!
 http://takeai.silverpigeon.jp/
@@ -14,7 +14,7 @@ http://takeai.silverpigeon.jp/
 
 == Description ==
 
-When rss-feed unsupported browser will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
+When rss-feed unsupported browser(Chrome and older than IE6) will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
 
 
 = Translators =
@@ -36,6 +36,9 @@ If you have created your own language pack, or have an update of an existing one
 
 
 == Changelog ==
+
+= 0.9.3 =
+* Fix: missing message.
 
 = 0.9.2 =
 * Fix: missing message.
