@@ -19,22 +19,24 @@ function execute_admin(&$obj) {
 
     ?>
 
-   <div id="poststuff">
-     
-   <h2>Feeeeed </h2>
-   <p><?php _e('Rss-feed not support browser (Chrome and older than IE6) is reading rss-feed then ..... :','feeeeed');?></p>
+    <div class="wrap cfshoppingcart_admin">
+    <div id="icon-plugins" class="icon32"><br/></div>
+    <h2><?php _e('Feeeeed', 'feeeeed'); ?></h2>
+      
     <form name="formF5d" method="post">
+    <div id="poststuff" class="meta-box-sortables" style="position: relative; margin-top:10px;">
       <input type="hidden" name="action" value="" />
       <input type="hidden" name="args" value="" />
         
     <?php
     if ($action === 'save') {
         save($obj);
-        echoMenuList($obj);
+        echoMenuList($obj, __('Saved','feeeeed'));
     } else {
         echoMenuList($obj);
     }
     
+    echo '</div>';
     echo '</form>';
     echo '</div>';
 }
@@ -76,18 +78,19 @@ function save(&$obj) {
 }
 
 function echoMenuList(&$obj, $msg = '') {
-    if ($msg) {
-        printf("<div class=\"msg\">%s</div>", $msg);
-    }
     // plugin
     $model = & $obj->model;
     $radio = $model->f5d_radio;
     
     if ($msg) {
-        echo '<fieldset><legend><strong><font color="red">Error message</font></strong></legend>' . $msg . '</fieldset>';
+        echo '<div id="message" class="updated"><p>' . $msg . '</p></div>';
     }
     ?>
       
+<div class="postbox feeeeed_postbox">
+  <h3>Custom Field Template Options</h3>
+  <div class="inside">
+    
     <fieldset>
       <legend><input type="radio" name="f5d_radio" value="html" <?php if ($radio === 'html') { echo 'checked'; }?> /><?php _e('Put feed formatted Html','feeeeed');?></legend>
       <?php _e('Date format','feeeeed');?> <input type="text" name="text_date_format" size="60" value="<?php echo $model->text_date_format; ?>" />
@@ -145,9 +148,11 @@ function echoMenuList(&$obj, $msg = '') {
     </fieldset>
 
     <fieldset>
-      <legend><?php _e('Operation','feeeeed');?></legend>
       <input type="submit" name="submit_save" value="Save" onClick="F5dJs.do_submit('save');" />
     </fieldset>
+      
+  </div>
+</div>
   <?php
 }
 ?>

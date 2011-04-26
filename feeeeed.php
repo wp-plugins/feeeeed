@@ -4,7 +4,7 @@ Plugin Name: feeeeed
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Author: AI.Takeuchi
-Version: 0.9.0
+Version: 0.9.1
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -32,6 +32,18 @@ load_plugin_textdomain('feeeeed', 'wp-content/plugins/feeeeed/lang', 'feeeeed/la
 
  
 function myplugin_tinymce() {
+    wp_enqueue_script('common');
+    wp_enqueue_script('jquery-color');
+    wp_print_scripts('editor');
+    if (function_exists('add_thickbox')) add_thickbox();
+    wp_print_scripts('media-upload');
+    if (function_exists('wp_tiny_mce')) wp_tiny_mce();
+    wp_admin_css();
+    wp_enqueue_script('utils');
+    do_action("admin_print_styles-post-php");
+    do_action('admin_print_styles');
+    remove_all_filters('mce_external_plugins');
+    /*
     wp_admin_css('thickbox');
     wp_print_scripts('jquery-ui-core');
     wp_print_scripts('jquery-ui-tabs');
@@ -40,6 +52,7 @@ function myplugin_tinymce() {
     add_thickbox();
     wp_print_scripts('media-upload');
     if (function_exists('wp_tiny_mce')) { wp_tiny_mce(); }
+      */
 }
 
 if (is_admin()) {
@@ -51,7 +64,15 @@ if (is_admin()) {
     // ritch text editor
     //add_filter('admin_head','ShowTinyMCE');
     //add_filter('admin_head','ugc_content');
+    //add_filter('admin_head','myplugin_tinymce');
+
+    // tiny mce
+    //add_action('admin_head', 'wp_tiny_mce'); // this line is commnet.
     add_filter('admin_head','myplugin_tinymce');
+    // when not working "Insert/edit link" button, add two lines:
+    // http://wordpress.org/support/topic/wp-31-problem-insertedit-link-button
+    add_action('admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30);
+    add_action('tiny_mce_preload_dialogs', 'wp_link_dialog', 30);
 } else {
     require_once('module/get_browser_info.php');
     $bw = get_browser_info();
@@ -200,49 +221,5 @@ class WpFeeeeed {
         execute_admin($this);
     }
 }
-
-/*
-function ugc_content(){
-    wp_admin_css('thickbox');
-    wp_enqueue_script('post');
-    wp_enqueue_script('editor');
-    wp_enqueue_script('editor-functions');
-    add_thickbox();
-    wp_enqueue_script('media-upload');
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('jquery-ui-core');
-    wp_enqueue_script('jquery-ui-tabs');
-    wp_enqueue_script('tiny_mce');
-}
-
-// ritch text editor
-function ShowTinyMCE() {
-    // conditions here
-    wp_enqueue_script('common');
-    wp_enqueue_script('jquery-color');
-    //wp_print_scripts('editor');
-    //if (function_exists('add_thickbox')) add_thickbox();
-    //wp_print_scripts('media-upload');
-    //if (function_exists('wp_tiny_mce')) wp_tiny_mce();
-    wp_admin_css();
-    wp_enqueue_script('utils');
-    //do_action("admin_print_styles-post-php");
-    //do_action('admin_print_styles');
-
-    fix_ShowTinyMCE();
-}
-function fix_ShowTinyMCE(){
-    wp_admin_css('thickbox');
-    wp_enqueue_script('post');
-    wp_enqueue_script('editor');
-    wp_enqueue_script('editor-functions');
-    add_thickbox();
-    wp_enqueue_script('media-upload');
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('jquery-ui-core');
-    wp_enqueue_script('jquery-ui-tabs');
-    wp_enqueue_script('tiny_mce');
- }
-  */
 
 ?>

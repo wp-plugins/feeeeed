@@ -3,13 +3,10 @@ Contributors: AI.Takeuchi
 Donate link: http://takeai.silverpigeon.jp/
 Tags: rss, feed, wordpress
 Requires at least: 2.6
-Tested up to: 2.9.2
-Stable tag: 0.9.0
+Tested up to: 3.1.1
+Stable tag: 0.9.1
 
-Feeeeed is a plugin that is Measures against browser that is not supports feed.
-Rss-feed not support browser (Chrome and older than IE6) is reading 
-rss-feed then output Rss-feed formatted html, move url or output message.
-Feeeeed is a plugin that is Measures against browser that is not supports feed.
+When rss-feed unsupported browser will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
 
 Demonstration site is here!!
 http://takeai.silverpigeon.jp/
@@ -17,9 +14,7 @@ http://takeai.silverpigeon.jp/
 
 == Description ==
 
-Feeeeed is a plugin that is Measures against browser that is not supports feed.
-Rss-feed not support browser (Chrome and older than IE6) is reading 
-rss-feed then output Rss-feed formatted html, move url or output message.
+When rss-feed unsupported browser will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
 
 
 = Translators =
@@ -42,6 +37,9 @@ If you have created your own language pack, or have an update of an existing one
 
 == Changelog ==
 
+= 0.9.1 =
+* Bug fix: about tinymce editor.
+
 = 0.9.0 =
 * Translation for German has been newly created by Rian Kremer.
 
@@ -57,6 +55,11 @@ If you have created your own language pack, or have an update of an existing one
 = 0.5 =
 * Include language file (pot file).
 * Bug fixed.
+
+
+== Screenshots ==
+
+1. screenshot-1.png
 
 
 == Others ==
