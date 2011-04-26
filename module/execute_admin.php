@@ -88,7 +88,7 @@ function echoMenuList(&$obj, $msg = '') {
     ?>
       
 <div class="postbox feeeeed_postbox">
-  <h3>Custom Field Template Options</h3>
+  <h3>Options</h3>
   <div class="inside">
     
     <fieldset>

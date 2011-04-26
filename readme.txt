@@ -4,7 +4,7 @@ Donate link: http://takeai.silverpigeon.jp/
 Tags: rss, feed, wordpress
 Requires at least: 2.6
 Tested up to: 3.1.1
-Stable tag: 0.9.1
+Stable tag: 0.9.2
 
 When rss-feed unsupported browser will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
 
@@ -36,6 +36,9 @@ If you have created your own language pack, or have an update of an existing one
 
 
 == Changelog ==
+
+= 0.9.2 =
+* Fix: missing message.
 
 = 0.9.1 =
 * Bug fix: about tinymce editor.
