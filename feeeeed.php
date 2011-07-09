@@ -4,7 +4,7 @@ Plugin Name: feeeeed
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Author: AI.Takeuchi
-Version: 0.9.3
+Version: 0.9.4
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -71,7 +71,11 @@ if (is_admin()) {
     add_filter('admin_head','myplugin_tinymce');
     // when not working "Insert/edit link" button, add two lines:
     // http://wordpress.org/support/topic/wp-31-problem-insertedit-link-button
-    add_action('admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30);
+    global $wp_version;
+    //echo $wp_version;
+    if (version_compare($wp_version, '3.2', '<')) {
+        add_action('admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30);
+    }
     add_action('tiny_mce_preload_dialogs', 'wp_link_dialog', 30);
 } else {
     require_once('module/get_browser_info.php');
@@ -96,7 +100,7 @@ if (is_admin()) {
 /* Data model */
 class WpFeeeeedModel {
     // member variable
-    var $version = '0.9.3';
+    var $version = '0.9.4';
     var $f5d_radio = 'html';
     var $text_jump_url = '';
     var $text_message = '';
@@ -202,6 +206,13 @@ class WpFeeeeed {
 
         echo '<script type="text/javascript">';
         require_once('module/js.php');
+
+        
+        global $wp_version;
+        //echo $wp_version;
+        if (version_compare($wp_version, '3.2', '>=')) {
+            require_once('module/admin_head.php');
+        }
         //echo 'window.onload = function() { FeeeeedJs.onLoad(); }';
         echo '</script>';
     }

@@ -107,40 +107,16 @@ function echoMenuList(&$obj, $msg = '') {
       <?php/*<textarea name="text_message" cols="60" rows="10"><?php echo $model->text_message; ?></textarea>*/?>
 
       <?php
-      /*
-      wp_tiny_mce(false);
-      add_filter('teeny_mce_buttons', 'teeny_mce_buttons');
-      wp_enqueue_script('page');
-      if (user_can_richedit()) {
-          wp_enqueue_script('thickbox');
-          add_action( 'admin_head', 'wp_tiny_mce' );
-          wp_enqueue_script('editor');
-          add_thickbox();
-          wp_enqueue_script('media-upload');
-          wp_enqueue_script('word-count');
+      global $wp_version;
+      //echo $wp_version;
+      if (version_compare($wp_version, '3.2', '<')) {
+          wp_tiny_mce(true);
       }
-      */
-     //the_editor(stripslashes($model->text_message), 'text_message');
-
-        /*
-     echo '<div id="postrichdiv" class="postarea">';
-     if (function_exists('wp_tiny_mce')) wp_tiny_mce();
-     the_editor(stripslashes($model->text_message), 'text_message');
-     echo '</div>';
-          */
-        /*
-    if ( current_user_can('edit_posts') ) {
-        echo '<div id="postrichdiv" class="postarea">';
-        the_editor('');
-        echo '</div>';
-    }
-          */
-        
-        /*the_editor($content_to_load);*/
-     the_editor(stripslashes($model->text_message), 'text_message');
-    
-    
-     ?>
+      ?>
+      
+      <?php
+      the_editor(stripslashes($model->text_message), 'text_message');
+      ?>
        
       <input type="checkbox" name="f5d_auto_move" value="checked" <?php echo $model->auto_move; ?> /><?php _e('After seconds to move URL','feeeeed');?>
       <br /><?php _e('Wait time','feeeee');?> <input type="text" name="f5d_auto_move_sec" value="<?php echo $model->auto_move_sec; ?>" /> <?php _e('seconds','feeeeed');?>
