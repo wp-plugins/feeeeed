@@ -4,7 +4,7 @@ Plugin Name: feeeeed
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Author: AI.Takeuchi
-Version: 0.9.4
+Version: 0.9.5
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -62,21 +62,16 @@ if (is_admin()) {
     // Registration of management screen function.
     add_action('admin_menu', array(&$wpFeeeeed, 'addAdminMenu'));
     // ritch text editor
-    //add_filter('admin_head','ShowTinyMCE');
-    //add_filter('admin_head','ugc_content');
-    //add_filter('admin_head','myplugin_tinymce');
-
     // tiny mce
-    //add_action('admin_head', 'wp_tiny_mce'); // this line is commnet.
-    add_filter('admin_head','myplugin_tinymce');
     // when not working "Insert/edit link" button, add two lines:
     // http://wordpress.org/support/topic/wp-31-problem-insertedit-link-button
     global $wp_version;
     //echo $wp_version;
     if (version_compare($wp_version, '3.2', '<')) {
+        add_filter('admin_head','myplugin_tinymce');
         add_action('admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30);
+        add_action('tiny_mce_preload_dialogs', 'wp_link_dialog', 30);
     }
-    add_action('tiny_mce_preload_dialogs', 'wp_link_dialog', 30);
 } else {
     require_once('module/get_browser_info.php');
     $bw = get_browser_info();
@@ -100,7 +95,7 @@ if (is_admin()) {
 /* Data model */
 class WpFeeeeedModel {
     // member variable
-    var $version = '0.9.4';
+    var $version = '0.9.5';
     var $f5d_radio = 'html';
     var $text_jump_url = '';
     var $text_message = '';
