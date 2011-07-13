@@ -4,7 +4,7 @@ Plugin Name: feeeeed
 Plugin URI: http://takeai.silverpigeon.jp/
 Description: Feeeeed is a plugin that is Measures against browser that is not supports feed.
 Author: AI.Takeuchi
-Version: 0.9.5
+Version: 0.9.6
 Author URI: http://takeai.silverpigeon.jp/
 */
 
@@ -31,7 +31,7 @@ Author URI: http://takeai.silverpigeon.jp/
 load_plugin_textdomain('feeeeed', 'wp-content/plugins/feeeeed/lang', 'feeeeed/lang');
 
  
-function myplugin_tinymce() {
+function feeeeed_myplugin_tinymce() {
     wp_enqueue_script('common');
     wp_enqueue_script('jquery-color');
     wp_print_scripts('editor');
@@ -60,18 +60,11 @@ if (is_admin()) {
     // Registration of management screen header output function.
     add_action('admin_head', array(&$wpFeeeeed, 'addAdminHead'));
     // Registration of management screen function.
-    add_action('admin_menu', array(&$wpFeeeeed, 'addAdminMenu'));
+    add_action('admin_menu', array($wpFeeeeed, 'addAdminMenu'));
     // ritch text editor
     // tiny mce
     // when not working "Insert/edit link" button, add two lines:
     // http://wordpress.org/support/topic/wp-31-problem-insertedit-link-button
-    global $wp_version;
-    //echo $wp_version;
-    if (version_compare($wp_version, '3.2', '<')) {
-        add_filter('admin_head','myplugin_tinymce');
-        add_action('admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30);
-        add_action('tiny_mce_preload_dialogs', 'wp_link_dialog', 30);
-    }
 } else {
     require_once('module/get_browser_info.php');
     $bw = get_browser_info();
@@ -95,7 +88,7 @@ if (is_admin()) {
 /* Data model */
 class WpFeeeeedModel {
     // member variable
-    var $version = '0.9.5';
+    var $version = '0.9.6';
     var $f5d_radio = 'html';
     var $text_jump_url = '';
     var $text_message = '';
@@ -203,25 +196,34 @@ class WpFeeeeed {
         require_once('module/js.php');
 
         
-        global $wp_version;
-        //echo $wp_version;
-        if (version_compare($wp_version, '3.2', '>=')) {
-            require_once('module/admin_head.php');
-        }
         //echo 'window.onload = function() { FeeeeedJs.onLoad(); }';
         echo '</script>';
     }
 
     function addAdminMenu() {
-        add_options_page(
+        $hook = add_options_page(
             'Feeeeed Options',
             'Feeeeed',
             8,
             'feeeeed.php',
             array(&$this, 'executeAdmin')
             );
+        add_action('admin_print_scripts-'.$hook, array(&$this, 'admin_scripts'));
     }
 
+    function admin_scripts() {
+        global $wp_version;
+        
+        // tiny mce
+        if (version_compare($wp_version, '3.2', '>=')) {
+            require_once('module/admin_head.php');
+        } else {
+            add_filter('admin_head','feeeeed_myplugin_tinymce');
+            add_action('admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30);
+            add_action('tiny_mce_preload_dialogs', 'wp_link_dialog', 30);
+        }
+    }
+    
     function executeAdmin() {
         require_once('module/execute_admin.php');
         execute_admin($this);

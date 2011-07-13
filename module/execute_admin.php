@@ -110,7 +110,7 @@ function echoMenuList(&$obj, $msg = '') {
       global $wp_version;
       //echo $wp_version;
       if (version_compare($wp_version, '3.2', '<')) {
-          wp_tiny_mce(true);
+          //wp_tiny_mce(true);
       }
       ?>
       
