@@ -2,9 +2,9 @@
 Contributors: AI.Takeuchi
 Donate link: http://takeai.silverpigeon.jp/
 Tags: rss, feed, wordpress
-Requires at least: 2.6
-Tested up to: 3.2.1
-Stable tag: 0.9.7
+Requires at least: 3.4
+Tested up to: 4.2.2
+Stable tag: 0.9.8
 
 When rss-feed unsupported browser(Chrome and older than IE6) will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
 
@@ -37,6 +37,9 @@ If you have created your own language pack, or have an update of an existing one
 
 
 == Changelog ==
+
+= 0.9.8 =
+* Fix and Compatible with WordPress 4.2.2.
 
 = 0.9.7 =
 * Translation for Romanian has been newly created by Alexander Ovsov.
@@ -80,10 +83,4 @@ If you have created your own language pack, or have an update of an existing one
 
 1. screenshot-1.png
 
-
-== Others ==
-
-# If you notice a my mistake(Program, English...), Please tell me.
-Web site: http://takeai.silverpigeon.jp/
-AI.Takeuchi <takeai@silverpigeon.jp>
 

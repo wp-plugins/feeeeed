@@ -3,6 +3,7 @@
  * function_feeeeed.php
  * -*- Encoding: utf8n -*-
  */
+
 function feeeeed() {
     // get data object
     $wpFeeeeed = & new WpFeeeeed();
@@ -24,7 +25,9 @@ function feeeeed() {
         $msg = str_replace("\n", '<br />', $msg);
         echo $msg;
 
-        if ($model->auto_move) { f5d_put_js($model); }
+        if ($model->auto_move) {
+            f5d_put_js($model);
+        }
     }
 }
 
@@ -32,16 +35,15 @@ function f5d_put_js($model) {
     ?>
     <script language="JavaScript">
     <!--
-    var url = "<?php echo $model->auto_move_url; ?>";
-    var timer = 1000 * <?php echo $model->auto_move_sec; ?>;  // [ms]
-    function f5d_move_url(){
-        location.href = url;
-    }
-    window.onload = function() {
-        timerID = setTimeout("f5d_move_url()", timer);
-    }
+        var url = "<?php echo $model->auto_move_url; ?>";
+        var timer = 1000 * <?php echo $model->auto_move_sec; ?>;  // [ms]
+        function f5d_move_url() {
+            location.href = url;
+        }
+        window.onload = function () {
+            timerID = setTimeout("f5d_move_url()", timer);
+        }
     //-->
     </script>
     <?php
 }
-?>
