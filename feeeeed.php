@@ -5,7 +5,7 @@
   Plugin URI: http://takeai.silverpigeon.jp/
   Description: Feeeeed is a plugin that is Measures against browser that is not supports feed.
   Author: AI.Takeuchi
-  Version: 0.9.9
+  Version: 0.9.10
   Author URI: http://takeai.silverpigeon.jp/
  */
 
