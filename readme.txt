@@ -4,7 +4,7 @@ Donate link: http://takeai.silverpigeon.jp/
 Tags: rss, feed, wordpress
 Requires at least: 3.4
 Tested up to: 4.2.2
-Stable tag: 0.9.8
+Stable tag: 0.9.9
 
 When rss-feed unsupported browser(Chrome and older than IE6) will be access rss-feed on your website then this plugin be displaying html formatted rss-feed or redirect url or displaying your message.
 
@@ -38,7 +38,7 @@ If you have created your own language pack, or have an update of an existing one
 
 == Changelog ==
 
-= 0.9.8 =
+= 0.9.9 =
 * Fix and Compatible with WordPress 4.2.2.
 
 = 0.9.7 =
